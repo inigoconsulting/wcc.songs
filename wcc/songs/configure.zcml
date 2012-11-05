@@ -19,9 +19,9 @@
        in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title=""
+      title="WCC Songs"
       directory="profiles/default"
-      description="Extension profile for "
+      description="Extension profile for WCC Songs"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
