@@ -6,7 +6,7 @@ version = '1.0'
 setup(name='wcc.songs',
       version=version,
       description="",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -15,13 +15,12 @@ setup(name='wcc.songs',
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='plone python wcc songs',
+      author='Inigo Consulting',
+      author_email='team@inigo-tech.com',
+      url='https://github.com/inigoconsulting/wcc.songs',
       license='gpl',
-      packages=find_packages('src'),
-      package_dir = {'': 'src'},
+      packages=find_packages(),
       namespace_packages=['wcc'],
       include_package_data=True,
       zip_safe=False,
