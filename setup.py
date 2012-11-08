@@ -28,6 +28,7 @@ setup(name='wcc.songs',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
+          'collective.flowplayer',
           # -*- Extra requirements: -*-
       ],
       extras_require={

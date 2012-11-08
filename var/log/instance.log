@@ -1,0 +1,60 @@
+------
+2012-11-06T07:40:10 INFO ZServer HTTP server started at Tue Nov  6 07:40:10 2012
+	Hostname: 0.0.0.0
+	Port: 8080
+------
+2012-11-06T07:40:13 INFO ZODB.blob (13185) Blob directory `/home/kulll/Documents/work/wcc/wcc.buildout/dev/wcc.songs/var/blobstorage` is unused and has no layout marker set. Selected `bushy` layout. 
+------
+2012-11-06T07:40:13 INFO ZODB.blob (13185) Blob temporary directory '/home/kulll/Documents/work/wcc/wcc.buildout/dev/wcc.songs/var/blobstorage/tmp' does not exist. Created new directory.
+------
+2012-11-06T07:40:13 WARNING ZODB.blob (13185) Blob dir /home/kulll/Documents/work/wcc/wcc.buildout/dev/wcc.songs/var/blobstorage/ has insecure mode setting
+------
+2012-11-06T07:40:17 INFO plone.app.theming Patched Zope Management Interface to disable theming.
+------
+2012-11-06T07:40:17 WARNING Init Class z3c.blobfile.file.File has a security declaration for nonexistent method 'contentType'
+------
+2012-11-06T07:40:17 WARNING Init Class z3c.blobfile.image.Image has a security declaration for nonexistent method 'contentType'
+------
+2012-11-06T07:40:20 INFO Zope Ready to handle requests
+------
+2012-11-06T07:42:08 INFO SignalHandler Caught signal SIGINT
+------
+2012-11-06T07:42:08 INFO Z2 Shutting down
+------
+2012-11-06T07:47:28 INFO ZServer HTTP server started at Tue Nov  6 07:47:28 2012
+	Hostname: 0.0.0.0
+	Port: 8080
+------
+2012-11-06T07:47:29 WARNING ZODB.FileStorage Ignoring index for /home/kulll/Documents/work/wcc/wcc.buildout/dev/wcc.songs/var/filestorage/Data.fs
+------
+2012-11-06T07:47:29 WARNING ZODB.blob (13484) Blob dir /home/kulll/Documents/work/wcc/wcc.buildout/dev/wcc.songs/var/blobstorage/ has insecure mode setting
+------
+2012-11-06T07:47:31 INFO plone.app.theming Patched Zope Management Interface to disable theming.
+------
+2012-11-06T07:47:31 WARNING Init Class z3c.blobfile.file.File has a security declaration for nonexistent method 'contentType'
+------
+2012-11-06T07:47:31 WARNING Init Class z3c.blobfile.image.Image has a security declaration for nonexistent method 'contentType'
+------
+2012-11-06T07:47:33 INFO Zope Ready to handle requests
+------
+2012-11-06T07:48:59 INFO SignalHandler Caught signal SIGINT
+------
+2012-11-06T07:48:59 INFO Z2 Shutting down
+------
+2012-11-06T07:53:51 INFO ZServer HTTP server started at Tue Nov  6 07:53:51 2012
+	Hostname: 0.0.0.0
+	Port: 8080
+------
+2012-11-06T07:53:52 WARNING ZODB.blob (13602) Blob dir /home/kulll/Documents/work/wcc/wcc.buildout/dev/wcc.songs/var/blobstorage/ has insecure mode setting
+------
+2012-11-06T07:53:53 INFO plone.app.theming Patched Zope Management Interface to disable theming.
+------
+2012-11-06T07:53:53 WARNING Init Class z3c.blobfile.file.File has a security declaration for nonexistent method 'contentType'
+------
+2012-11-06T07:53:53 WARNING Init Class z3c.blobfile.image.Image has a security declaration for nonexistent method 'contentType'
+------
+2012-11-06T07:53:55 INFO Zope Ready to handle requests
+------
+2012-11-06T07:53:55 INFO SignalHandler Caught signal SIGINT
+------
+2012-11-06T07:53:55 INFO Z2 Shutting down
