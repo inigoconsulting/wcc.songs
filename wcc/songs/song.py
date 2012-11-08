@@ -34,8 +34,15 @@ class ISong(form.Schema, IImageScaleTraversable):
     # models/song.xml to define the content type
     # and add directives here as necessary.
 
-    audio_file = NamedBlobFile(title=u'Mp3', required=True)
-    pdf_file = NamedBlobFile(title=u'Pdf', required=True)
+    audio_file = NamedBlobFile(
+            title=_(u'Mp3'),
+            required=True,
+            )
+
+    lyric_file = NamedBlobFile(
+            title=_(u'Pdf'),
+            required=True,
+            )
 
 
 # View class
@@ -47,3 +54,6 @@ class Index(dexterity.DisplayForm):
     grok.context(ISong)
     grok.require('zope2.View')
     grok.name('view')
+
+#    def update(self):
+#        import ipdb; ipdb.set_trace()
