@@ -35,12 +35,14 @@ class ISong(form.Schema, IImageScaleTraversable):
     # and add directives here as necessary.
 
     audio_file = NamedBlobFile(
-            title=_(u'Mp3'),
+            title=_(u'Audio'),
+            description=_('mp3, aac'),
             required=True,
             )
 
     lyric_file = NamedBlobFile(
-            title=_(u'Pdf'),
+            title=_(u'Lyrics'),
+            description=_(u'pdf, txt'),
             required=True,
             )
 
