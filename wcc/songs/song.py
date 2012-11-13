@@ -40,7 +40,7 @@ class ISong(form.Schema, IImageScaleTraversable):
             required=True,
             )
 
-    lyric_file = NamedBlobFile(
+    notes_file = NamedBlobFile(
             title=_(u'Lyrics'),
             description=_(u'pdf, txt'),
             required=True,
