@@ -34,10 +34,9 @@
 </tal:audio> 
 </div>
 
-<div id="lyrics">
-<label id='lyrics'> Lyrics Attachment
-<span tal:replace="structure view/w/lyric_file/render"></span>
-</label>
+<div id="score">
+    <label>Score (PDF) : </label> <span tal:replace="structure view/w/score_file/render"></span><br/>
+    <label>Score (TIFF) : </label><span tal:replace="structure view/w/score_image_file/render"></span>
 </div>
 
 

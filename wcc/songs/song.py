@@ -21,6 +21,9 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from wcc.songs import MessageFactory as _
 from Products.ATContentTypes.interfaces.folder import IATFolder
 
+from hurry.filesize import size as readable_size
+from hurry.filesize import alternative
+
 # Interface class; used to define content-type schema.
 
 class ISong(form.Schema, IImageScaleTraversable):
@@ -36,15 +39,21 @@ class ISong(form.Schema, IImageScaleTraversable):
 
     audio_file = NamedBlobFile(
             title=_(u'Audio'),
-            description=_('mp3, aac'),
+            description=_('Upload the MP3 or AAC audio file here'),
             required=True,
-            )
+    )
 
-    lyric_file = NamedBlobFile(
-            title=_(u'Lyrics'),
-            description=_(u'pdf, txt'),
+    score_file = NamedBlobFile(
+            title=_(u'Score (PDF)'),
+            description=_(u'Upload score PDF of the song here'),
             required=True,
-            )
+    )
+
+    score_image_file = NamedBlobFile(
+            title=_(u'Score (TIFF)'),
+            description=_(u'Upload score TIFF of the song here'),
+            required=True,
+    )
 
 
 # View class
@@ -54,6 +63,7 @@ class ISong(form.Schema, IImageScaleTraversable):
 
 class Index(dexterity.DisplayForm):
     grok.context(ISong)
+    grok.template('song')
     grok.require('zope2.View')
     grok.name('view')
 
@@ -64,5 +74,5 @@ class SongListing(grok.View):
     grok.name('song_listing')
     grok.template('song_listing')
 
-#    def update(self):
-#        import ipdb; ipdb.set_trace()
+    def get_size(self, f):
+        return readable_size(f.getSize(), system=alternative)

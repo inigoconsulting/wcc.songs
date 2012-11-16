@@ -29,6 +29,7 @@ setup(name='wcc.songs',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
           'collective.flowplayer',
+          'hurry.filesize'
           # -*- Extra requirements: -*-
       ],
       extras_require={
