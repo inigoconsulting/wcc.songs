@@ -19,7 +19,7 @@ from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from wcc.songs import MessageFactory as _
-
+from Products.ATContentTypes.interfaces.folder import IATFolder
 
 # Interface class; used to define content-type schema.
 
@@ -40,7 +40,7 @@ class ISong(form.Schema, IImageScaleTraversable):
             required=True,
             )
 
-    notes_file = NamedBlobFile(
+    lyric_file = NamedBlobFile(
             title=_(u'Lyrics'),
             description=_(u'pdf, txt'),
             required=True,
@@ -56,6 +56,13 @@ class Index(dexterity.DisplayForm):
     grok.context(ISong)
     grok.require('zope2.View')
     grok.name('view')
+
+
+class SongListing(grok.View):
+    grok.context(IATFolder)
+    grok.require('zope2.View')
+    grok.name('song_listing')
+    grok.template('song_listing')
 
 #    def update(self):
 #        import ipdb; ipdb.set_trace()

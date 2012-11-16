@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="wcc.songs">
+
+ <!--<metal:block fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css" 
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++wcc.songs/song.css"
+            />
+    </metal:block>
+-->
+
+
+<body>
+
+    <metal:main fill-slot="content-core">
+    <metal:macro define-macro="content-core">
+    anwar
+        <metal:block metal:use-macro="here/folder_listing/macros/content-core">
+            <metal:main fill-slot="entry">
+            <dt tal:content="item_title_or_id"></dt>
+     
+            </metal:main>
+            </metal:block>
+
+    </metal:macro>
+    </metal:main>
+</body>
+</html>
+

@@ -36,7 +36,7 @@
 
 <div id="lyrics">
 <label id='lyrics'> Lyrics Attachment
-<span tal:replace="structure view/w/notes_file/render"></span>
+<span tal:replace="structure view/w/lyric_file/render"></span>
 </label>
 </div>
 
