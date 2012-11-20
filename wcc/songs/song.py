@@ -23,6 +23,7 @@ from Products.ATContentTypes.interfaces.folder import IATFolder
 
 from hurry.filesize import size as readable_size
 from hurry.filesize import alternative
+from plone.app.collection.interfaces import ICollection
 
 # Interface class; used to define content-type schema.
 
@@ -76,3 +77,6 @@ class SongListing(grok.View):
 
     def get_size(self, f):
         return readable_size(f.getSize(), system=alternative)
+
+class CollectionSongListing(SongListing):
+    grok.context(ICollection)
