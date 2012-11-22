@@ -35,25 +35,25 @@
                     <tbody>
                         <metal:block use-macro="context/folder_listing/macros/entries">
                             <metal:entry fill-slot="entry">
-                                <tal:block condition="python:item_type == 'File'">
+
+                                <tal:def define="item_obj item/getObject">
+                                <tal:block condition="python:view.can_display(item_obj)">
                                 <tr metal:define-macro="listitem"
-                                    tal:define="item_obj item/getObject;
-                                                audio python:view.get_audio(item_obj);">
+                                    tal:define="audio python:view.get_audio(item_obj);">
                                     <td tal:content="item_title_or_id">
                                     </td>
                                     <td>
                                         <div>
                                             <a class="autoFlowPlayer audio" 
-                                            tal:attributes="href python:
-                                            view.href(audio)"></a>
+                                            tal:attributes="href python:view.href(item_obj)"></a>
                                         </div>
                                     </td>
                                         
                                     <td>
                                         <div>
                                             <a
-                                        tal:attributes="href string: ${item_url}/at_download/file">
-                                            MP3 (<span tal:content="python:view.get_size(audio)"></span>)
+                                        tal:attributes="href python: view.href(item_obj)">
+                                            MP3 (<span tal:content="python:view.get_size(item_obj)"></span>)
                                             </a>
                                         </div>
                                     </td>
@@ -63,6 +63,7 @@
                                 </tr>
 
                             </tal:block>
+                        </tal:def>
 
                             </metal:entry>
                         </metal:block>
