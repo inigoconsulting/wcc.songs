@@ -5,6 +5,7 @@ from hurry.filesize import alternative
 from Acquisition import aq_inner
 import os
 from Products.ATContentTypes.interfaces.file import IATFile
+from plone.app.collection.interfaces import ICollection
 from zope.interface import Interface
 from wcc.songs.song import ISong
 
@@ -46,6 +47,11 @@ class MediaListing(grok.View):
         except:
             return False
         return True
+
+
+class CollectionMediaListing(MediaListing):
+    grok.context(ICollection)
+
 
 
 class FileAdapter(grok.Adapter):
