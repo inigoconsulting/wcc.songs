@@ -1,0 +1,21 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:gs="http://namespaces.zope.org/genericsetup">
+
+ <gs:upgradeStep
+    title="Upgrade to 1001"
+    description=""
+    source="1"
+    destination="1001"
+    handler=".handlers.to1001"
+    profile="wcc.songs:default"/>
+
+ <gs:registerProfile
+    name="to1001"
+    title="Upgrade to 1001"
+    directory="profiles/to1001"
+    description=""
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+</configure>

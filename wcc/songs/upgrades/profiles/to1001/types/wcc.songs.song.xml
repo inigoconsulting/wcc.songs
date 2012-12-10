@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="wcc.songs.song"
+   meta_type="Dexterity FTI"
+   i18n:domain="wcc.songs" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+  <property name="behaviors">
+     <element value="plone.app.content.interfaces.INameFromTitle" />
+     <element value="plone.app.dexterity.behaviors.metadata.IOwnership"/>
+     <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
+     <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
+     <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable"/>
+   </property>
+
+</object>
