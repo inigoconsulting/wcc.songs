@@ -20,6 +20,7 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from wcc.songs import MessageFactory as _
 from Products.ATContentTypes.interfaces.folder import IATFolder
+from Products.ATContentTypes.interfaces.topic import IATTopic
 
 from hurry.filesize import size as readable_size
 from hurry.filesize import alternative
@@ -100,5 +101,10 @@ class SongListing(grok.View):
     def get_size(self, f):
         return readable_size(f.getSize(), system=alternative)
 
+
 class CollectionSongListing(SongListing):
     grok.context(ICollection)
+
+
+class TopicSongListing(SongListing):
+    grok.context(IATTopic)
