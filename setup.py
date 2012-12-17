@@ -5,7 +5,7 @@ version = '1.2.dev0'
 
 setup(name='wcc.songs',
       version=version,
-      description="",
+      description="Audio content type with score attachments for Plone",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from

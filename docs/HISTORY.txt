@@ -7,4 +7,12 @@ Changelog
 - add medialisting view to IATTopic
 - made songs language independent
 - add dublincore fields to songs
+- Language neutral fields
 
+1.1 (2012-12-04)
+----------------
+
+- Collection listing support
+- Multiple file type fields for score (PDF and TIFF).
+
+Supported by: World Council of Churches
