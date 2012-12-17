@@ -18,4 +18,21 @@
     provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
+ <gs:upgradeStep
+    title="Upgrade to 1002"
+    description=""
+    source="1001"
+    destination="1002"
+    handler=".handlers.to1002"
+    profile="wcc.songs:default"/>
+
+ <gs:registerProfile
+    name="to1002"
+    title="Upgrade to 1002"
+    directory="profiles/to1002"
+    description=""
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+
 </configure>

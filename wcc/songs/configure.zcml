@@ -29,4 +29,9 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+    <utility
+        factory=".HiddenProducts"
+        name="wcc.songs.upgrades"
+        />
+
 </configure>
