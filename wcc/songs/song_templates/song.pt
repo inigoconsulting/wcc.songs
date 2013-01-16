@@ -16,13 +16,6 @@
 
 <body>
 
-<tal:comment tal:condition="nothing">
-    This is a sample view template. It will not be used for rendering the
-    content unless activated by creation of a view class with a matching name.
-    
-    Note that we're using Plone 4 macros. Replace them with Plone 3 macros
-    if needed.
-</tal:comment>
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
@@ -35,8 +28,8 @@
 </div>
 
 <div id="score">
-    <label>Score (PDF) : </label> <span tal:replace="structure view/w/score_file/render"></span><br/>
-    <label>Score (TIFF) : </label><span tal:replace="structure view/w/score_image_file/render"></span>
+    <label i18n:translate="">Score (PDF) : </label> <span tal:replace="structure view/w/score_file/render"></span><br/>
+    <label i18n:translate="">Score (TIFF) : </label><span tal:replace="structure view/w/score_image_file/render"></span>
 </div>
 
 
