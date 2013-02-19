@@ -74,7 +74,7 @@ class ISong(form.Schema, IImageScaleTraversable, IBasic):
     score_image_file = NamedBlobFile(
             title=_(u'Score (TIFF)'),
             description=_(u'Upload score TIFF of the song here'),
-            required=True,
+            required=False,
     )
 
     form.order_before(description = '*')
