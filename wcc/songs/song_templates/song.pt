@@ -15,15 +15,41 @@
 
 
 <body>
+    
 
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
-
+    <div>
+        <script>
+            $(document).ready(function() {
+                function supports_audio() {
+                    var a = document.createElement('audio');
+                    return !!(a.canPlayType);
+                }
+                if (supports_audio()) {
+                    $('.audioSupported').css('display', 'block');
+                    $('.audioNotSupported').css('display', 'none');
+                }
+                else {
+                    $('.audioSupported').css('display', 'none');
+                    $('.audioNotSupported').css('display', 'block');
+                }
+            })
+        </script>
+    </div>
   <div id="audio">
   <tal:audio define="audio nocall:context/audio_file"
     tal:condition="nocall:audio">
-    <a class="autoFlowPlayer audio" tal:attributes="href string:${context/absolute_url}/@@download/audio_file/${audio/filename}"></a>
+        <div class="audioSupported">
+            <audio controls>
+                <source tal:attributes="src string:${context/absolute_url}/@@download/audio_file/${audio/filename}" />
+            </audio>
+        </div>
+        <div class="audioNotSupported">
+            <a class="autoFlowPlayer audio" 
+            tal:attributes="href string:${context/absolute_url}/@@download/audio_file/${audio/filename}"></a>
+        </div>
 </tal:audio> 
 </div>
 
