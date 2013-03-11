@@ -7,7 +7,6 @@
       i18n:domain="wcc.songs">
 
 <body>
-
     <metal:content-core fill-slot="content-core">
 
         <tal:block define="folderContents context/results|nothing">
@@ -15,7 +14,24 @@
             <metal:entries fill-slot="entries">
 
                 <div metal:use-macro="context/batch_macros/macros/navigation" />
-
+                <div>
+                    <script>
+                        $(document).ready(function() {
+                            function supports_audio() {
+                                var a = document.createElement('audio');
+                                return !!(a.canPlayType);
+                            }
+                        if (supports_audio()) {
+                            $('.audioSupported').css('display', 'block');
+                            $('.audioNotSupported').css('display', 'none');
+                        }
+                        else {
+                            $('.audioSupported').css('display', 'none');
+                            $('.audioNotSupported').css('display', 'block');
+                        }
+                        })
+                    </script>
+                </div>
                 <table class="listing"
                     summary="Content listing"
                     i18n:attributes="summary summary_content_listing;">
@@ -47,7 +63,12 @@
                                     <td tal:content="item_title_or_id">
                                     </td>
                                     <td>
-                                        <div>
+                                        <div class="audioSupported">
+                                            <audio controls>
+                                                <source tal:attributes="src string:${item_url}/@@download/audio_file/${audio/filename}" />
+                                            </audio>
+                                        </div>
+                                        <div class="audioNotSupported">
                                             <a class="autoFlowPlayer audio" 
                                             tal:attributes="href string:${item_url}/@@download/audio_file/${audio/filename}"></a>
                                         </div>
