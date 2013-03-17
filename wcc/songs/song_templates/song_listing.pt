@@ -6,6 +6,11 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="wcc.songs">
 
+      <metal:block fill-slot="javascript_head_slot">
+        <script tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+                tal:attributes="src string:${navroot}/++resource++wcc.songs/script.js">
+        </script>
+    </metal:block>
 <body>
     <metal:content-core fill-slot="content-core">
 
@@ -15,22 +20,7 @@
 
                 <div metal:use-macro="context/batch_macros/macros/navigation" />
                 <div>
-                    <script>
-                        $(document).ready(function() {
-                            function supports_audio() {
-                                var a = document.createElement('audio');
-                                return !!(a.canPlayType);
-                            }
-                        if (supports_audio()) {
-                            $('.audioSupported').css('display', 'block');
-                            $('.audioNotSupported').css('display', 'none');
-                        }
-                        else {
-                            $('.audioSupported').css('display', 'none');
-                            $('.audioNotSupported').css('display', 'block');
-                        }
-                        })
-                    </script>
+
                 </div>
                 <table class="listing"
                     summary="Content listing"
@@ -65,7 +55,8 @@
                                     <td>
                                         <div class="audioSupported">
                                             <audio controls>
-                                                <source tal:attributes="src string:${item_url}/@@download/audio_file/${audio/filename}" />
+                                                <source tal:attributes="src string:${item_url}/@@download/audio_file/${audio/filename};
+                                                                        type audio/contentType;" />
                                             </audio>
                                         </div>
                                         <div class="audioNotSupported">
