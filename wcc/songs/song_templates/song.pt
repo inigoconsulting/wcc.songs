@@ -30,8 +30,7 @@
     tal:condition="nocall:audio">
         <div class="audioSupported">
             <audio controls>
-                <source tal:attributes="src string:${context/absolute_url}/@@download/audio_file/${audio/filename};
-                                        type audio/contentType;" />
+                <source tal:attributes="src string:${context/absolute_url}/@@download/audio_file/${audio/filename};" />
             </audio>
         </div>
         <div class="audioNotSupported">
