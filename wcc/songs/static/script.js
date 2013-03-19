@@ -1,7 +1,11 @@
 $(document).ready(function() {
     function supports_audio() {
         var a = document.createElement('audio');
-        return !!(a.canPlayType);
+        if (!!(a.canPlayType)) {
+            return a.canPlayType('audio/mpeg');
+        } else {
+            return false   
+        };
     }
     if (supports_audio()) {
         $('.audioSupported').show();
