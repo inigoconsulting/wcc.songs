@@ -54,7 +54,7 @@
                                     </td>
                                     <td>
                                         <div class="audioSupported">
-                                            <audio controls>
+                                            <audio controls preload="none">
                                                 <source tal:attributes="src string:${item_url}/@@download/audio_file/${audio/filename};" />
                                             </audio>
                                         </div>
